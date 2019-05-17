@@ -1,0 +1,41 @@
+<h1>Pessoas</h1>
+<hr>
+<style>
+    .avatar {
+        height: 75px;
+        width: 75px;
+    }
+</style>
+<div class="row" ng-controller="pessoasCtrl">
+    <div class="row">
+        <br>
+        <input type="text" class="form-control" ng-model="busca.nome" placeholder="Pesquise">
+        <br>
+    </div>
+    <div>
+
+    </div>
+    <select class="form-control" ng-model="busca.sexo">
+                <option value="">Qualquer</option>
+                <option value="Homem">Homem</option>
+                <option value="Mulher">Mulher</option>
+            </select>
+    <table class="table table-striped">
+        <tr>
+            <th>Foto</th>
+            <th>Nome</th>
+            <th>Sexo</th>
+            <th>Telefone</th>
+            <th>Celular</th>
+            <th>Perfil</th>
+        </tr>
+        <tr ng-repeat="pessoa in personas | filter : busca | orderBy : 'nome'" class="animated fadeInDown">
+            <td> <img ng-src="img/{{ pessoa.avatar }}" class="avatar img-circle"> </td>
+            <td>{{pessoa.nome}} </td>
+            <td>{{pessoa.sexo}} </td>
+            <td>{{pessoa.telefono}} </td>
+            <td>{{pessoa.celular}} </td>
+            <td> <a href="#/Pessoa/{{ pessoa.id }}"> Perfil de {{pessoa.nome}}</a> </td>
+        </tr>
+    </table>
+</div>

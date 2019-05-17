@@ -1,15 +1,17 @@
-var app = angular.module('projetoApp', ['ngRoute']);
+var app = angular.module('universidadApp', ['ngRoute']);
 
-app.controller('mainCtrl', ['$http', '$scope', function($http, $scope) {
+app.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
 
-    $scope.menuPrincipal = 'html/menu.html';
+    $scope.menuSuperior = 'html/menu.html';
 
-    $scope.setAtivar = function(select) {
+
+    $scope.setActive = function(Opcion) {
+
         $scope.mInicio = "";
-        $scope.mListagem = "";
         $scope.mPessoa = "";
+        $scope.mCadastro = "";
 
-        $scope[select] = "active";
+        $scope[Opcion] = "active";
 
     }
 

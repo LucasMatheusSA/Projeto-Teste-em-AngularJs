@@ -1,10 +1,14 @@
+<head ng-controller="pessoaCtrl">
+    <script type="text/javascript">
+        window.onload = function() {
+            buscaId();
+        }
+    </script>
+</head>
 <div class="container" ng-controller="pessoaCtrl">
-    <div ng-include="test"></div>
-
-    <h1>Pessoa</h1>
-    <h4>{{ profesor.nombre }}</h4>
-    <hr>
-
+    <h1>{{ perfilPessoa.nome }}</h1>
+    <h4>{{ id }}</h4>
+    <button class="btn btn-primary" ng-click="buscaId()">calcular</button>
     <div class="row">
 
 
@@ -52,5 +56,6 @@
                 </div>
             </section>
         </div>
+
 
     </div>

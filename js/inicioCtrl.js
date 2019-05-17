@@ -1,4 +1,6 @@
-app.controller('inicioCtrl', ['$scope', function($scope) {
-    $scope.setAtivar("mInicio");
+app.controller('inicioCtrl', ['$scope', function($scope){
+	
+	$scope.setActive("mInicio");
+
 
 }]);
