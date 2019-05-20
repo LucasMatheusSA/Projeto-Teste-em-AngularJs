@@ -7,7 +7,12 @@ app.controller('cadastroCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.atualizar = function() {
         $http.post('php/servicios/alumnos.crear.php', $scope.aluno).then(function(data) {
             console.log(data);
-            $scope.atualizado = true;
+            Swal.fire({
+                type: 'success',
+                title: 'Cadastro realizado com sucesso',
+                showConfirmButton: false,
+                timer: 1750
+            })
         });
     }
 
