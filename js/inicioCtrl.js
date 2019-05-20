@@ -4,16 +4,16 @@ app.controller('inicioCtrl', ['$scope', function($scope) {
 
     $scope.popUp = function() {
         Swal.fire({
-            title: 'Custom width, padding, background.',
+            title: 'so no teste aq',
             width: 600,
             padding: '3em',
-            background: '#fff url(/img/ceuEstrela.jpg)',
+            background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
             backdrop: `
-			  rgba(0,0,123,0.4)
-			  url("/img/cat.gif")
-			  center left
-			  no-repeat
-			`
-        })
+              rgba(0,0,123,0.4)
+              url("https://sweetalert2.github.io/images/nyan-cat.gif")
+              center left
+              no-repeat
+            `
+          })
     }
 }]);
