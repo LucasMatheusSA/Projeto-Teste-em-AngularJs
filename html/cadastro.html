@@ -1,3 +1,20 @@
 <h1>Cadastro</h1>
 <hr>
-<p>so um teste</p>
+<div class="row">
+    <form ng-submit="atualizar()">
+
+        <h3>Nome:</h3>
+        <input type="text" class="form-control" ng-model="aluno.nombre" placeholder="Digite o nome" required>
+        <br>
+        <h3>Telefone:</h3>
+        <input type="text" class="form-control" ng-model="aluno.telefono" ui-mask="9999-9999" required>
+        <br>
+        <h3>Descrição:</h3>
+        <textarea class="form-control" ng-model=aluno.direccion rows="5" placeholder="Escreva uma descrição" required></textarea>
+        <br>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <br>
+        <br>
+        <p class="text-success animated fadeIn" ng-show="atualizado">Cadastrado com sucesso</p>
+    </form>
+</div>

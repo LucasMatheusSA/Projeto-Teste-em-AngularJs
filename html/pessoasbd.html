@@ -1,0 +1,23 @@
+<h1>Listagem a partir do banco</h1>
+
+<hr>
+<div class="row">
+    <div class="row">
+        <br>
+        <input type="text" class="form-control" ng-model="busca.nombre" placeholder="Pesquise">
+        <br>
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <th>Codigo</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+        </tr>
+        <tr ng-repeat="aluno in alunos | filter : busca">
+            <td>{{aluno.codigo}}</td>
+            <td>{{aluno.nombre}}</td>
+            <td>{{aluno.telefono}}</td>
+        </tr>
+    </table>
+</div>
+{{alunos | json}}

@@ -5,7 +5,6 @@ app.controller('pessoasCtrl', ['$scope', function($scope) {
     $scope.inicio = 5;
     $scope.filtrando = "";
 
-    $scope.personas = ["Carlos", "Pedro", "Maria", "Susana", "Melissa", "Fernando", "Hernando", "Juan", "Camila", "Ubaldina", "Jocelyn", "Arlette", "Dilcia", "Andrea", "Antonio", "Jose", "Alberto"];
 
 
     $scope.siguientes = function() {
