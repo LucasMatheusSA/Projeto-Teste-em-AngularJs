@@ -13,11 +13,10 @@
             <th>Nome</th>
             <th>Telefone</th>
         </tr>
-        <tr ng-repeat="aluno in alunos | filter : busca">
+        <tr ng-repeat="aluno in alunos.data">
             <td>{{aluno.codigo}}</td>
             <td>{{aluno.nombre}}</td>
             <td>{{aluno.telefono}}</td>
         </tr>
     </table>
 </div>
-{{alunos | json}}
