@@ -1,6 +1,7 @@
-app.controller('inicioCtrl', ['$scope', function($scope) {
+app.controller('inicioCtrl', ['$scope', '$http', function($scope, $http) {
 
     $scope.setActive("mInicio");
+    $scope.dados = {};
 
     $scope.popUp = function() {
         Swal.fire({
@@ -14,6 +15,12 @@ app.controller('inicioCtrl', ['$scope', function($scope) {
               center left
               no-repeat
             `
-          })
+        })
     }
+
+    $http.jsonp('http://www.geoplugin.net/json.gp?jsoncallback=JSON_CALLBACK').then(function(data) {
+        $scope.dados = data;
+    })
+
+
 }]);
