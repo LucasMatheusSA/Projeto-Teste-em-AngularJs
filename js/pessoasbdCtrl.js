@@ -2,11 +2,11 @@ app.controller('pessoasbdCtrl', ['$scope', '$http', function($scope, $http) {
 
     $scope.setActive("mPessoasBD");
 
-    $scope.alunos = {};
+    $scope.pessoas = {};
 
-    $http.get('php/servicios/alumnos.listado.php').then(function(data) {
+    $http.get('php/servicios/alumnos.getAlumno.php?c=').then(function(data) {
         console.log("funciona");
-        $scope.alunos = data;
+        $scope.pessoas = data;
     });
 
 

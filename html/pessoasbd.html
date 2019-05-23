@@ -12,11 +12,13 @@
             <th>Codigo</th>
             <th>Nome</th>
             <th>Telefone</th>
+            <th>Perfil</th>
         </tr>
-        <tr ng-repeat="aluno in alunos.data">
-            <td>{{aluno.codigo}}</td>
-            <td>{{aluno.nombre}}</td>
-            <td>{{aluno.telefono}}</td>
+        <tr ng-repeat="pessoa in pessoas.data">
+            <td>{{pessoa.codigo}}</td>
+            <td>{{pessoa.nombre}}</td>
+            <td>{{pessoa.telefono}}</td>
+            <td><a href="#/Pessoa/{{pessoa.nombre}}">perfil de {{pessoa.nombre}}</a></td>
         </tr>
     </table>
 </div>

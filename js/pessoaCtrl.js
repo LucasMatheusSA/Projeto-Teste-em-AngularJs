@@ -2,19 +2,11 @@ app.controller('pessoaCtrl', ['$scope', '$routeParams', '$http', function($scope
 
 
     $scope.id = $routeParams.id;
-    // $scope.avatar = $routeParams.avatar;
-    // $scope.telefone = $routeParams.telefone;
-    // $scope.celular = $routeParams.celular;
-    // $scope.id = $routeParams.id;
-    $scope.perfilPessoa = {};
+    $scope.pessoas = {};
 
-    $scope.buscaId = function(personas) {
-        for (var i = 0; i < personas.length(); i++) {
-            if (personas[i].id === $scope.id) {
-                perfilPessoa = personas[i];
-            }
-        }
-    }
+    $http.get('php/servicios/alumnos.listado' + $scope.id).then(function(data) {
+        $scope.pessoas = data;
+    })
 
 
 }]);
