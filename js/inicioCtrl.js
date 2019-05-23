@@ -25,12 +25,12 @@ app.controller('inicioCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.dados = data;
     })
 
-    $http.get('http://10.36.11.17:8080/pessoabd').then(function(data) {
-        $scope.teste = data;
-        console.log('sdsd', data);
-    }).catch(function(error) {
-        console.log('sfggs', error)
-    })
+    // $http.get('http://10.36.11.17:8080/pessoabd').then(function(data) {
+    //     $scope.teste = data;
+    //     console.log('sdsd', data);
+    // }).catch(function(error) {
+    //     console.log('sfggs', error)
+    // })
 
 
 }]);
