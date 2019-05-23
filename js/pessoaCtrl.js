@@ -1,14 +1,23 @@
 app.controller('pessoaCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
 
 
-    $scope.id = $routeParams.id;
-    $scope.pessoas = {};
+    var id = $routeParams.id;
+    $scope.pessoa = {};
 
-    $http.get('php/servicios/alumnos.listado' + $scope.id).then(function(data) {
-        $scope.pessoas = data;
-    })
+    $http.get('php/servicios/alumnos.getAlumno.php?c=' + id).then(function(data) {
+        $scope.pessoa = data;
+    });
 
-
+    $scope.atualizar = function() {
+        $http.post('php/servicios/alumnos.guardar.php', $scope.pessoa).then(function() {
+            Swal.fire({
+                type: 'success',
+                title: 'Atualização realizada com sucesso',
+                showConfirmButton: false,
+                timer: 1750
+            })
+        });
+    }
 }]);
 
 

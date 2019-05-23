@@ -1,0 +1,20 @@
+-----   Criando Banco   -----
+link:http://localhost:"porta"/phpmyadmin
+-myslq ativado no xampp
+-nome da base "univer_db"
+-escolher "armscii8_general_ci"
+-clicar em criar
+
+*Criar user
+-privilegios e adduser
+-nome "univer_user"
+-servidor "localhost"
+-senha "123456"
+-marcar todos os privilegios 
+-clicar em executar
+
+*Adicionar alunos ja preparados 
+-univer_db
+-clicar em importar
+-importar arquivo "alumnos.sql"
+-clicar em executar

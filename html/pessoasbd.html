@@ -14,11 +14,11 @@
             <th>Telefone</th>
             <th>Perfil</th>
         </tr>
-        <tr ng-repeat="pessoa in pessoas.data">
+        <tr ng-repeat="pessoa in pessoas.data | filter : busca">
             <td>{{pessoa.codigo}}</td>
             <td>{{pessoa.nombre}}</td>
             <td>{{pessoa.telefono}}</td>
-            <td><a href="#/Pessoa/{{pessoa.nombre}}">perfil de {{pessoa.nombre}}</a></td>
+            <td><a href="#/Pessoa/{{pessoa.codigo}}">perfil de {{pessoa.nombre}}</a></td>
         </tr>
     </table>
 </div>

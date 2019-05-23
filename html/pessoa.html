@@ -6,22 +6,22 @@
     </script>
 </head> -->
 <div class="row">
-    <h1>{{pessoa.nombre}} - {{pessoa.codigo}}</h1>
+    <h1>{{pessoa.data.nombre}} - Nº{{pessoa.data.codigo}}</h1>
     <br><br>
-    <form action="">
+    <form ng-submit="atualizar()">
         <h4>Nome:</h4>
         <br>
-        <input type="text" class="form-control" ng-model="pessoa.nombre" required>
+        <input type="text" class="form-control" ng-model="pessoa.data.nombre" required>
         <br>
         <h4>Telefone:</h4>
         <br>
-        <input type="number" class="form-control" ng-model="pessoa.telefone" ui-mask="9999-9999" required>
+        <input type="text" class="form-control" ng-model="pessoa.data.telefono" ui-mask="9999-9999" required>
         <br>
         <h4>Descrição:</h4>
         <br>
-        <textarea class="form-control" ng-model="pessoa.decrição" cols="30" rows="5"></textarea>
+        <textarea class="form-control " ng-model="pessoa.data.direccion " cols="30 " rows="5 "></textarea>
         <br><br>
-        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <button type="submit " class="btn btn-primary ">Atualizar</button>
     </form>
 
 

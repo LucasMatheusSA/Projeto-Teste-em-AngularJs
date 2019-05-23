@@ -13,7 +13,7 @@ app.config(function($routeProvider) {
             templateUrl: 'html/cadastro.html',
             controller: 'cadastroCtrl'
         })
-        .when('/Pessoa/:id/', {
+        .when('/Pessoa/:id', {
             templateUrl: 'html/pessoa.html',
             controller: 'pessoaCtrl'
         })

@@ -4,7 +4,7 @@ app.controller('pessoasbdCtrl', ['$scope', '$http', function($scope, $http) {
 
     $scope.pessoas = {};
 
-    $http.get('php/servicios/alumnos.getAlumno.php?c=').then(function(data) {
+    $http.get('php/servicios/alumnos.listado.php').then(function(data) {
         console.log("funciona");
         $scope.pessoas = data;
     });
