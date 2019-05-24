@@ -1,4 +1,4 @@
-<h1>Pessoas</h1>
+<h1><i class="fa fa-users"></i> Pessoas</h1>
 <hr>
 <style>
     .avatar {
@@ -29,7 +29,7 @@
             <th>Celular</th>
             <th>Perfil</th>
         </tr>
-        <tr ng-repeat="pessoa in personas | filter : busca | orderBy : 'nome'" class="animated fadeInDown">
+        <tr ng-repeat="pessoa in personas | filter : busca | orderBy : 'nome'" class="animated fadeInUp">
             <td> <img ng-src="img/{{ pessoa.avatar }}" class="avatar img-circle"> </td>
             <td>{{pessoa.nome}} </td>
             <td>{{pessoa.sexo}} </td>
