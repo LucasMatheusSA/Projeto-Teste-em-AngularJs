@@ -1,5 +1,5 @@
 app.controller('listaCtrl', ['$scope', function($scope) {
-    $scope.setAtivar("mListagem");
+    $scope.setAtivar("mPessoas");
 
     $scope.personas = [{
             "id": 0,

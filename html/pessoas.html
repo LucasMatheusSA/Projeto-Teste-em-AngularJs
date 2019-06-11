@@ -6,8 +6,8 @@
         width: 75px;
     }
 </style>
-<div class="row" ng-controller="pessoasCtrl">
-    <div class="row">
+<div ng-controller="pessoasCtrl">
+    <div>
         <br>
         <input type="text" class="form-control" ng-model="busca.nome" placeholder="Pesquise">
         <br>
@@ -30,13 +30,14 @@
             <th>Perfil</th>
         </tr>
         <tr ng-repeat="pessoa in personas | filter : busca | orderBy : 'nome'" class="animated fadeInUp">
-            <td> <img ng-src="img/{{ pessoa.avatar }}" class="avatar img-circle"> </td>
+            <td> <img ng-src="img/{{ pessoa.avatar }}" class="avatar rounded-circle"> </td>
             <td>{{pessoa.nome}} </td>
             <td>{{pessoa.sexo}} </td>
             <td>{{pessoa.telefono}} </td>
             <td>{{pessoa.celular}} </td>
             <td>
-                <a href="#/Pessoa/{{ pessoa.id }}"> <i class="fa-address-card"></i> {{pessoa.nome}}</a>
+                <!-- <a href="#/Pessoa/{{ pessoa.id }}"> <i class="fa-address-card"></i> {{pessoa.nome}}</a> -->
+                <button class="btn btn-success" ng-click="edicao()"> <i class="fa fa-edit"></i> </button>
             </td>
         </tr>
     </table>

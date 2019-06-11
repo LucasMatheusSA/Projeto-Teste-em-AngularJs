@@ -21,6 +21,26 @@ app.controller('pessoasCtrl', ['$scope', function($scope) {
         };
     }
 
+    $scope.edicao = async function() {
+        const { value: formValues } = await Swal.fire({
+            title: 'Cadastro',
+            html: '<h4>Nome:</h4>' +
+                '<input id="swal-input1" class="swal2-input" ng-model="$scope.teste1" placeholder="Digite seu nome">' +
+                '<h4>Sobrenome:</h4>' +
+                '<input id="swal-input2" class="swal2-input" ng-model="$scope.teste2" placeholder="Digite seu sobrenome">',
+            focusConfirm: false,
+            preConfirm: () => {
+                return [
+                    document.getElementById('swal-input1').value,
+                    document.getElementById('swal-input2').value
+                ]
+            }
+        })
+
+        if (formValues) {
+            Swal.fire(JSON.stringify(formValues))
+        }
+    }
 
     $scope.personas = [{
             "id": 0,

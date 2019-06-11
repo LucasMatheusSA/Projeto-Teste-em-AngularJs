@@ -8,9 +8,10 @@ app.controller('mainCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.setActive = function(Opcion) {
 
         $scope.mInicio = "";
-        $scope.mPessoa = "";
+        $scope.mPessoas = "";
         $scope.mCadastro = "";
         $scope.mPessoasBD = "";
+        $scope.mNotas = "";
 
         $scope[Opcion] = "active";
 

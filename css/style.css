@@ -1,3 +1,55 @@
-body {
-  padding-top: 50px;
+/* body {
+    padding-top: 50px;
+} */
+
+.direito-inferior {
+    position: absolute;
+    float: right;
+    margin-bottom: 3;
+    right: 30px;
+    bottom: 0;
+}
+
+
+/* Botão pesquisar e Mais Botões */
+
+.btnPesquisar,
+.btnMaisBotoes {
+    position: fixed;
+    float: bottom;
+    bottom: 15px;
+    right: 15px;
+    z-index: 100;
+}
+
+
+/* Botão superior esquerdo */
+
+.btnSupEsquerdo {
+    position: fixed;
+    float: top;
+    top: 15px;
+    left: 15px;
+    z-index: 100;
+}
+
+.btnPesquisarInput,
+.btnPesquisarBtn,
+.btnMaisBotoesBtn,
+.btnMaisBotoesGrupo {
+    display: inline-block;
+}
+
+.btnCircular {
+    border-radius: 50%;
+}
+
+.btnPrincipal {
+    font-size: 20px;
+    padding: 15px;
+}
+
+.btnSecundario {
+    font-size: 15px;
+    padding: 10px;
 }

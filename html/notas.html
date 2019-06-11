@@ -1,0 +1,24 @@
+<h1><i class="fa fa-pen"></i> Calculo de Notas</h1>
+
+<hr>
+<div class="row">
+    <div class="col">
+        <h3>Nota 1:</h3>
+        <input type="text" class="form-control" ng-model="nota1" placeholder="Digite a nota 1">
+    </div>
+    <div class="col">
+        <h3>Nota 2:</h3>
+        <input type="text" class="form-control" ng-model="nota2" placeholder="Digite a nota 2">
+    </div>
+    <button class="btn btn-primary" ng-click="calcular()"><i class="fa fa-angle-right"></i> Calcular</button>
+</div>
+
+<br><br>
+<div class="card p-3 mb-2 {{cor}} text-white text-center animated fadeIn" ng-show="result">
+    <div class="card-header">
+        <h4>{{titulo}}</h4>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{mensagem}}</h5>
+    </div>
+</div>

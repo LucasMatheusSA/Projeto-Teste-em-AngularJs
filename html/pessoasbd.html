@@ -1,8 +1,8 @@
 <h1><i class="fa fa-user-cog"></i> Listagem a partir do banco</h1>
 
 <hr>
-<div class="row">
-    <div class="row">
+<div>
+    <div>
         <br>
         <input type="text" class="form-control" ng-model="busca.nombre" placeholder="Pesquise">
         <br>
@@ -18,7 +18,7 @@
             <td>{{pessoa.codigo}}</td>
             <td>{{pessoa.nombre}}</td>
             <td>{{pessoa.telefono}}</td>
-            <td><a href="#/Pessoa/{{pessoa.codigo}}"><i class="fa fa-pen"></i> {{pessoa.nombre}}</a></td>
+            <td><a class="btn btn-light" href="#/Pessoa/{{pessoa.codigo}}"><i class="fa fa-pen"></i> {{pessoa.nombre}}</a></td>
         </tr>
     </table>
 </div>

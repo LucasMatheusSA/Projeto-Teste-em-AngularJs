@@ -1,31 +1,49 @@
-<div class="row" ng-controller="listaCtrl">
-    <div class="row">
+<div ng-controller="listaCtrl">
+    <div>
         <br>
         <input type="text" class="form-control" ng-model="busca.nome" placeholder="Pesquise">
         <br>
     </div>
     <div>
 
-    </div>
-    <select class="form-control" ng-model="busca.sexo">
+
+        <select class="form-control" ng-model="busca.sexo">
                 <option value="">Qualquer</option>
                 <option value="Homem">Homem</option>
                 <option value="Mulher">Mulher</option>
             </select>
-    <table class="table table-striped">
-        <tr>
-            <th>Foto</th>
-            <th>Nome</th>
-            <th>Sexo</th>
-            <th>Telefone</th>
-            <th>Celular</th>
-        </tr>
-        <tr ng-repeat="pessoa in personas | filter : busca | orderBy : 'nome'" class="animated fadeInDown">
-            <td> <img ng-src="img/{{ pessoa.avatar }}" class="avatar img-circle"> </td>
-            <td>{{pessoa.nome}} </td>
-            <td>{{pessoa.sexo}} </td>
-            <td>{{pessoa.telefono}} </td>
-            <td>{{pessoa.celular}} </td>
-        </tr>
-    </table>
-</div>
+        <table class="table table-striped">
+            <tr>
+                <th>Foto</th>
+                <th>Nome</th>
+                <th>Sexo</th>
+                <th>Telefone</th>
+                <th>Celular</th>
+            </tr>
+            <tr ng-repeat="pessoa in personas | filter : busca | orderBy : 'nome'" class="animated fadeInDown">
+                <td> <img ng-src="img/{{ pessoa.avatar }}" class="avatar img-circle"> </td>
+                <td>{{pessoa.nome}} </td>
+                <td>{{pessoa.sexo}} </td>
+                <td>{{pessoa.telefono}} </td>
+                <td>{{pessoa.celular}} </td>
+            </tr>
+        </table>
+    </div>
+    <!-- ADICIONAR DEPOIS
+<div class="input-group">
+        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button">
+        <div class="input-group-append">
+            <button type="button" class="btn btn-outline-secondary">Action</button>
+            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Qualquer</a>
+            </div>
+        </div>
+    </div>
+</div> -->

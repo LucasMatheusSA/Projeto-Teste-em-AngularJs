@@ -9,7 +9,8 @@ app.controller('pessoaCtrl', ['$scope', '$routeParams', '$http', function($scope
     });
 
     $scope.atualizar = function() {
-        $http.post('php/servicios/alumnos.guardar.php', $scope.pessoa).then(function() {
+        $http.post('php/servicios/alumnos.guardar.php', $scope.pessoa).then(function(data) {
+            console.log(data);
             Swal.fire({
                 type: 'success',
                 title: 'Atualização realizada com sucesso',
