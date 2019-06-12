@@ -17,11 +17,11 @@ app.controller('notasCtrl', ['$scope', '$http', function($scope, $http) {
             if ((parseFloat($scope.nota1) * 2) < 5) {
                 ppassar = (15 - (parseFloat($scope.nota1) * 2)) / 3;
                 $scope.cor = "bg-danger";
-                $scope.mensagem = "Necessário (Ir Final) - " + ppassar.toFixed(2);
+                $scope.mensagem = "Nota para ir pra final (2GQ) - " + ppassar.toFixed(2);
             } else {
                 ppassar = (35 - (parseFloat($scope.nota1) * 2)) / 3;
                 $scope.cor = "bg-primary";
-                $scope.mensagem = "Necessário (2GQ) - " + ppassar.toFixed(2);
+                $scope.mensagem = "Nota para passar direto (2GQ) - " + ppassar.toFixed(2);
             }
         } else {
             media = ((parseFloat($scope.nota1) * 2) + (parseFloat($scope.nota2) * 3)) / 5;
@@ -32,10 +32,10 @@ app.controller('notasCtrl', ['$scope', '$http', function($scope, $http) {
             if (parseFloat(media) < 7) {
                 ppassar = 10 - parseFloat(media);
                 $scope.cor = "bg-danger";
-                $scope.mensagem = "Necessário (Final) - " + ppassar.toFixed(2);
+                $scope.mensagem = "Nota para passar (Final) - " + ppassar.toFixed(2);
             } else {
                 $scope.cor = "bg-success";
-                $scope.mensagem = "Parabéns você passou com nota - " + media.toFixed(2);
+                $scope.mensagem = "Parabéns você passou com nota (Média) - " + media.toFixed(2);
             }
         }
     }
@@ -44,6 +44,10 @@ app.controller('notasCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.result = true;
         if ($scope.nota2 === "" && $scope.nota1 === "") {
             $scope.titulo = "Não foi digitado nenhuma nota";
+            $scope.mensagem = "-";
+        } else
+        if ($scope.nota2 !== "" && $scope.nota1 === "") {
+            $scope.titulo = "Digite a primeira nota";
             $scope.mensagem = "-";
         } else
         if ($scope.nota2 === "") {

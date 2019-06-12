@@ -6,57 +6,6 @@ app.controller('inicioCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.teste1 = "daaaaale";
     $scope.teste2 = "";
 
-    $scope.popUp = function() {
-        Swal.fire({
-            title: 'so no teste aq',
-            width: 600,
-            padding: '3em',
-            background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
-            backdrop: `
-              rgba(0,0,123,0.4)
-              url("https://sweetalert2.github.io/images/nyan-cat.gif")
-              center left
-              no-repeat
-            `
-        })
-    }
-
-    $scope.edica = function() {
-        Swal.fire({
-            input: 'text',
-            title: 'Digite seu texto',
-            html: '<h4>Nome:</h4>' +
-                '<input id="$scope.teste1" class="swal2-input" ng-model="$scope.teste1" placeholder="Digite seu nome">' +
-                '<h4>Sobrenome:</h4>' +
-                '<input id="$scope.teste2" class="swal2-input" ng-model="$scope.teste2" placeholder="Digite seu sobrenome">',
-
-            focusConfirm: true,
-        })
-    }
-
-    $scope.edicao = async function() {
-        const { value: formValues } = await Swal.fire({
-            title: 'Cadastro',
-            html: '<h4>Nome:</h4>' +
-                '<input id="swal-input1" class="swal2-input" ng-model="$scope.teste1" placeholder="Digite seu nome">' +
-                '<h4>Sobrenome:</h4>' +
-                '<input id="swal-input2" class="swal2-input" ng-model="$scope.teste2" placeholder="Digite seu sobrenome">',
-            focusConfirm: false,
-            preConfirm: () => {
-                return [
-                    document.getElementById('swal-input1').value,
-                    document.getElementById('swal-input2').value
-                ]
-            }
-        })
-
-        if (formValues) {
-            Swal.fire(JSON.stringify(formValues))
-        }
-    }
-
-
-
     $http.jsonp('http://www.geoplugin.net/json.gp?jsoncallback=JSON_CALLBACK').then(function(data) {
         console.log(data);
         $scope.dados = data;

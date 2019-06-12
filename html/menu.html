@@ -1,32 +1,46 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#/"><img class="rounded-circle" src="img/imgIcon.jpg" width="30" height="30"> Projeto AngularJs</a>
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#/Pessoas">Pessoas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#/Cadastro">Cadastro</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#/PessoasBD">Lista Pessoas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#/Notas">Notas</a>
-            </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-primary my-2 my-sm-0 " ng-click="popUp()"><i class="fa fa-angle-right" ></i> clica <i class="fa fa-angle-left"></i></button>
-        </form>
 
+    <a class="navbar-brand" href="#/"><img class="rounded-circle" src="img/imgIcon.jpg" width="30" height="30"> Projeto AngularJs</a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="col-11">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/Pessoas">Pessoas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/Cadastro">Cadastro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/PessoasBD">Lista Pessoas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#/Notas">Notas</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-outline-primary my-2 my-sm-0 " ng-click="popUp()"><i class="fa fa-angle-right" ></i> clica <i class="fa fa-angle-left"></i></button>
+        </div>
     </div>
 </nav>
 
-<!-- colar depois isso
-<img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+<script>
+    $scope.popUp = function() {
+        Swal.fire({
+            title: 'so no teste aq',
+            width: 600,
+            padding: '3em',
+            background: '#fff url(https://sweetalert2.github.io/images/trees.png)',
+            backdrop: `
+                  rgba(0,0,123,0.4)
+                  url("https://sweetalert2.github.io/images/nyan-cat.gif")
+                  center left
+                  no-repeat
+                `
+        })
+    }
+</script>
