@@ -25,6 +25,10 @@ app.config(function($routeProvider) {
             templateUrl: 'html/notas.html',
             controller: 'notasCtrl'
         })
+        .when('/Contas', {
+            templateUrl: 'html/contas.html',
+            controller: 'contasCtrl'
+        })
         .otherwise({
             redirectTo: '/'
         });
