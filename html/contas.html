@@ -5,20 +5,34 @@
     <div class="input-group-prepend">
         <span class="input-group-text">$</span>
     </div>
-    <input type="text" class="form-control" placeholder="Digite o valor" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+    <input ng-model="conta.valor" type="text" class="form-control" placeholder="Digite o valor" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
     <div class="input-group-append" id="button-addon4">
-        <button class="btn btn-success" type="button"><i class="fa fa-plus"></i></button>
-        <button class="btn btn-danger" type="button"><i class="fa fa-minus"></i></button>
-        <div class="input-group-append">
+        <button class="btn btn-success" type="button" ng-click="positivo()"><i class="fa fa-plus"></i></button>
+        <button class="btn btn-danger" type="button" ng-click="negativo()"><i class="fa fa-minus"></i></button>
+        <!-- <div class="input-group-append">
             <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo</button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#"><i class="fa fa-university"></i></a>
-                <a class="dropdown-item" href="#"><i class="fa fa-money-bill-wave"></i></a>
+                <a class="dropdown-item" href="#">iae<i class="fa fa-university"></i></a>
+                <a class="dropdown-item" href="#">dale dale<i class="fa fa-money-bill-wave"></i></a>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 
+<div class="input-group">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Add</span>
+    </div>
+    <textarea ng-model="conta.desc" class="form-control" aria-label="Add" placeholder="Digite a descrição"></textarea>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked><i class="fa fa-university"></i>
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option2" autocomplete="off"><i class="fa fa-money-bill-wave"></i>
+            </label>
+          </div>
+</div>
 <table class="table table-borderless table-dark">
     <thead>
         <tr>
@@ -26,32 +40,16 @@
             <th scope="col"><i class="fa fa-university"></i> Banco</th>
             <th scope="col"><i class="fa fa-money-bill-wave"></i> Fisica</th>
             <th scope="col"><i class="fa fa-coins"></i> Cash</th>
-            <th scope="col"><i class="fa fa-trash-alt"></i> Delete</th>
+            <th scope="col"><i class="fa fa-align-justify"></i> Descrição</th>
+            <th scope="col" width="10%"><i class="fa fa-trash-alt"></i> Delete</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td class="">Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>
-                <button class="btn btn-danger"> <i class="fa fa-trash"></i> </button>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>
-                <button class="btn btn-danger"> <i class="fa fa-trash"></i> </button>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
+        <tr ng-repeat="con in contas">
+            <td>{{con.banco}}</td>
+            <td>{{con.fisico}}</td>
+            <td class="{{corValor}}">{{con.valor}}</td>
+            <td>{{con.desc}}</td>
             <td>
                 <button class="btn btn-danger"> <i class="fa fa-trash"></i> </button>
             </td>
