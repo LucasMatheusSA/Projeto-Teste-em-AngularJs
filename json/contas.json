@@ -1,5 +1,9 @@
 {
-    "contas": [
-
-    ]
+    "contas": [{
+        "id": 0,
+        "valor": 0,
+        "banco": 0,
+        "fisico": 0,
+        "desc": ""
+    }]
 }

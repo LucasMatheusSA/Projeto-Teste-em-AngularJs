@@ -1,4 +1,5 @@
-<h1><i class="fa fa-wallet"></i> Contas</h1>
+<h1>
+    <i class="fa fa-wallet"></i> Contas</h1>
 <br>
 
 <div class="input-group">
@@ -9,35 +10,24 @@
     <div class="input-group-append" id="button-addon4">
         <button class="btn btn-success" type="button" ng-click="positivo()"><i class="fa fa-plus"></i></button>
         <button class="btn btn-danger" type="button" ng-click="negativo()"><i class="fa fa-minus"></i></button>
-        <!-- <div class="input-group-append">
-            <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo</button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">iae<i class="fa fa-university"></i></a>
-                <a class="dropdown-item" href="#">dale dale<i class="fa fa-money-bill-wave"></i></a>
-            </div>
-        </div> -->
+        <button class="btn btn-dark" type="button" ng-click="saque()"><i class="fa fa-credit-card"></i></button>
     </div>
 </div>
 
 <div class="input-group">
     <div class="input-group-prepend">
-      <span class="input-group-text">Add</span>
+        <span class="input-group-text">Add</span>
     </div>
     <textarea ng-model="conta.desc" class="form-control" aria-label="Add" placeholder="Digite a descrição"></textarea>
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-secondary active">
-              <input type="radio" name="options" id="option1" autocomplete="off" checked><i class="fa fa-university"></i>
-            </label>
-            <label class="btn btn-secondary">
-              <input type="radio" name="options" id="option2" autocomplete="off"><i class="fa fa-money-bill-wave"></i>
-            </label>
-          </div>
+    <div class="input-group-append" id="button-addon4">
+        <button class="{{corLocalB}}" type="button" ng-click="selecionar('banco')"><i class="fa fa-university"></i></button>
+        <button class="{{corLocalF}}" type="button" ng-click="selecionar('fisico')"><i class="fa fa-money-bill-wave"></i></button>
+    </div>
 </div>
-<table class="table table-borderless table-dark">
+<table class="table table-borderless table-dark text-center">
     <thead>
         <tr>
-            <th scope="col"></th>
-            <th scope="col"><i class="fa fa-university"></i> Banco</th>
+            <th class="{{corCol}} color" scope="col"><i class="fa fa-university"></i> Banco</th>
             <th scope="col"><i class="fa fa-money-bill-wave"></i> Fisica</th>
             <th scope="col"><i class="fa fa-coins"></i> Cash</th>
             <th scope="col"><i class="fa fa-align-justify"></i> Descrição</th>
@@ -45,13 +35,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="con in contas">
+        <tr ng-repeat="con in contas track by con.id">
             <td>{{con.banco}}</td>
             <td>{{con.fisico}}</td>
-            <td class="{{corValor}}">{{con.valor}}</td>
+            <td class="{{con.cor}}">{{con.valor}}</td>
             <td>{{con.desc}}</td>
             <td>
-                <button class="btn btn-danger"> <i class="fa fa-trash"></i> </button>
+                <button class="btn btn-danger" ng-click="deletar(id)"> <i class="fa fa-trash"></i> </button>
             </td>
         </tr>
     </tbody>

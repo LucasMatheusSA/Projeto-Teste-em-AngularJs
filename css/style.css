@@ -2,6 +2,37 @@
     padding-top: 50px;
 } */
 
+
+/* PARA TESTE DA PARTE DE CONTAS*/
+
+
+/* body {
+    background: #f4f4f4;
+    color: #000000;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #000000;
+    color: #ffffff;
+}
+
+td {
+    border: 1px solid #999;
+    padding: 10px;
+    cursor: pointer;
+} */
+
+.clicked {
+    display: none;
+    background: #ffffff;
+    color: #000000;
+}
+
+
+/* -----------------------------*/
+
 .direito-inferior {
     position: absolute;
     float: right;
