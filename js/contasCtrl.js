@@ -1,7 +1,7 @@
 app.controller('contasCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.cor = "";
-    $scope.corLocalB = "btn btn-secondary";
-    $scope.corLocalF = "btn btn-secondary";
+    $scope.corLocalB = "";
+    $scope.corLocalF = "";
     $scope.corCol = "";
 
     $scope.local = "";
@@ -18,16 +18,17 @@ app.controller('contasCtrl', ['$scope', '$http', function($scope, $http) {
 
     $scope.contas = [];
 
-    $scope.selecionar = function(nome) {
-        if (nome === "fisico") {
-            $scope.local = "fisico";
-            $scope.corLocalB = "btn btn-secondary"
-            $scope.corLocalF = "btn btn-primary"
-        } else if (nome === "banco") {
-            $scope.local = "banco";
-            $scope.corLocalB = "btn btn-primary"
-            $scope.corLocalF = "btn btn-secondary"
-        }
+    $scope.selecionarF = function() {
+        $scope.local = "fisico";
+        $scope.corLocalB = ""
+        $scope.corLocalF = "bg-primary"
+
+    }
+
+    $scope.selecionarB = function() {
+        $scope.local = "banco";
+        $scope.corLocalB = "bg-primary"
+        $scope.corLocalF = ""
     }
 
     $scope.positivo = function() {
