@@ -8,22 +8,22 @@ $request = json_decode($postdata);
 $request =  (array) $request;
 
 
-$request['nombre'] = strtoupper($request['nombre']);
+$request['nome'] = strtoupper($request['nome']);
 
 
-$sql = "UPDATE alumnos SET
-			nombre    = '".$request['nombre']."',
-			telefono  = '".$request['telefono']."',
-			direccion = '".$request['direccion']."' 
+$sql = "UPDATE pessoa SET
+			nome = '".$request['nome']."',
+			fone = '".$request['fone']."',
+			desc = '".$request['desc']."' 
 		WHERE codigo = ".$request['codigo'];
 
 $Hecho = Database::ejecutar_idu($sql);
 $Respuesta = "";
 
 if ($Hecho == "1") {
-	$Respuesta = json_encode( array('err' => false, 'mensaje'=>'Registro Actualizado.' ));
+	$Respuesta = json_encode( array('err' => false, 'mensagem'=>'Registro Atualizado.' ));
 }else{
-	$Respuesta = json_encode( array('err' => true, 'mensaje'=> $Hecho ));
+	$Respuesta = json_encode( array('err' => true, 'mensagem'=> $Hecho ));
 }
 
 echo $Respuesta;

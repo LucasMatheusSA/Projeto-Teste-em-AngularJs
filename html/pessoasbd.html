@@ -16,9 +16,9 @@
         </tr>
         <tr class="animated fadeInUp" ng-repeat="pessoa in pessoas.data | filter : busca">
             <td>{{pessoa.codigo}}</td>
-            <td>{{pessoa.nombre}}</td>
-            <td>{{pessoa.telefono}}</td>
-            <td><a class="btn btn-light" href="#/Pessoa/{{pessoa.codigo}}"><i class="fa fa-pen"></i> {{pessoa.nombre}}</a></td>
+            <td>{{pessoa.nome}}</td>
+            <td>{{pessoa.fone}}</td>
+            <td><a class="btn btn-light" href="#/Pessoa/{{pessoa.codigo}}"><i class="fa fa-pen"></i> {{pessoa.nome}}</a></td>
         </tr>
     </table>
 </div>

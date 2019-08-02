@@ -1,11 +1,10 @@
 <?php
 // ======================================================
-// Clase: class.Database.php
-// Funcion: Se encarga del manejo con la base de datos
-// Descripcion: Tiene varias funciones muy útiles para
-// 				el manejo de registros.
+// Classe: class.Database.php
+// Função: Se encarrega do manejo com a base de dados 
+// Descrição: Várias funções uteis para o manejo dos dados
 // 				
-// Ultima Modificación: 17 de marzo de 2015
+// 				
 // ======================================================
 	
 
@@ -13,18 +12,17 @@ class Database{
 
 	private $_connection;
 	private $_host = "localhost";
-	private $_user = "univer_user";
+	private $_user = "projeto_user";
 	private $_pass = "123456";
-	private $_db   = "univer_db";
+	private $_db   = "projeto_db";
 
 
-	// Almacenar una unica instancia
 	private static $_instancia;
 
 
 
 	// ================================================
-	// Metodo para obtener instancia de base de datos
+	// Metodo para obter estancia dos dados
 	// ================================================
 	public static function getInstancia(){
 
@@ -36,39 +34,34 @@ class Database{
 	}
 
 	// ================================================
-	// Constructor de la clase Base de datos
+	// Construtor da classe base de dados
 	// ================================================
 	public function __construct(){
 		$this->_connection = new mysqli($this->_host,$this->_user,$this->_pass,$this->_db);
 
-		// Manejar error en base de datos
+		
 		if (mysqli_connect_error()) {
-			trigger_error('Falla en la conexion de base de datos'. mysqli_connect_error(), E_USER_ERROR );
+			trigger_error('Falha na conexão de dados'. mysqli_connect_error(), E_USER_ERROR );
 		}
 	}
 
-	// Metodo vacio __close para evitar duplicacion
+	// Metodo vacio __close para evitar duplicação
 	private function __close(){}
 
-	// Metodo para obtener la conexion a la base de datos
+	// Metodo para obter conexão com a base de dados
 	public function getConnection(){
 		return $this->_connection;
 	}
 
-	// Metodo que revisa el String SQL
 	private function es_string($sql){
 		if (!is_string($sql)) {
-			trigger_error('class.Database.inc: $SQL enviado no es un string: ' .$sql);
+			trigger_error('class.Database.inc: $SQL enviado nao e um string: ' .$sql);
 			return false;
 		}
 		return true;
 	}
 
-	// ==================================================
-	// 	Funcion que ejecuta el SQL y retorna un ROW
-	// 		Esta funcion esta pensada para SQLs, 
-	// 		que retornen unicamente UNA sola línea
-	// ==================================================
+
 	public function get_Row($sql){
 		
 		if(!self::es_string($sql))
@@ -85,11 +78,7 @@ class Database{
 		}
 	}
 
-	// ==================================================
-	// 	Funcion que ejecuta el SQL y retorna un CURSOR
-	// 		Esta funcion esta pensada para SQLs, 
-	// 		que retornen multiples lineas (1 o varias)
-	// ==================================================
+
 	public function get_Cursor($sql){
 
 		if(!self::es_string($sql))
@@ -100,13 +89,10 @@ class Database{
 		$mysqli = $db->getConnection();
 
 		$resultado = $mysqli->query($sql);
-		return $resultado; // Este resultado se puede usar así:  while ($row = $resultado->fetch_assoc()){...}
+		return $resultado; 
 	}
 
-	// ==================================================
-	// 	Funcion que ejecuta el SQL y retorna un jSon
-	// 	data: [{...}] con N cantidad de registros
-	// ==================================================
+
 	public function get_json_rows($sql){
 
 		if(!self::es_string($sql))
@@ -117,7 +103,6 @@ class Database{
 
 		$resultado = $mysqli->query($sql);
 
-		// Si hay un error en el SQL, este es el error de MySQL
 		if (!$resultado ) {
 		    return "class.Database.class: error ". $mysqli->error;
 		}
@@ -131,11 +116,7 @@ class Database{
 		return json_encode( $registros );
 	}
 
-	// ==================================================
-	// 	Funcion que ejecuta el SQL y retorna un jSon
-	// 	de una sola linea. Ideal para imprimir un
-	// 	Query que solo retorne una linea
-	// ==================================================
+
 	public function get_json_row($sql){
 
 		if(!self::es_string($sql))
@@ -146,7 +127,7 @@ class Database{
 
 		$resultado = $mysqli->query($sql);
 
-		// Si hay un error en el SQL, este es el error de MySQL
+
 		if (!$resultado ) {
 		    return "class.Database.class: error ". $mysqli->error;
 		}
@@ -158,10 +139,7 @@ class Database{
 		return json_encode( $row );
 	}
 
-	// ====================================================================
-	// 	Funcion que ejecuta el SQL y retorna un valor
-	// 	Ideal para count(*), Sum, cosas que retornen una fila y una columna
-	// ====================================================================
+
 	public function get_valor_query($sql,$columna){
 
 		if(!self::es_string($sql,$columna))
@@ -172,24 +150,20 @@ class Database{
 
 		$resultado = $mysqli->query($sql);
 
-		// Si hay un error en el SQL, este es el error de MySQL
+
 		if (!$resultado ) {
 		    return "class.Database.class: error ". $mysqli->error;
 		}
 
 		$Valor = NULL;
-		//Trae el primer valor del arreglo
         if ($row = $resultado->fetch_assoc()) {
-            // $Valor = array_values($row)[0];
             $Valor = $row[$columna];
         }
 
         return $Valor;
 	}
 
-	// ====================================================================
-	// 	Funcion que ejecuta el SQL de inserción, actualización y eliminación
-	// ====================================================================
+
 	public function ejecutar_idu($sql){
 
 		if(!self::es_string($sql))
@@ -209,10 +183,7 @@ class Database{
         return $resultado;
 	}
 
-	// ====================================================================
-	// 	Funciones para encryptar y desencryptar data: 
-	// 		crypt_blowfish_bydinvaders
-	// ====================================================================
+
 	function crypt($aEncryptar, $digito = 7) {
         $set_salt = './1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
         $salt = sprintf('$2a$%02d$', $digito);

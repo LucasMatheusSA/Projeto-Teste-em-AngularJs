@@ -12,6 +12,7 @@ app.controller('inicioCtrl', ['$scope', '$http', function($scope, $http) {
     })
 
 
+
     function toggleBtn(botao) {
         var elemento;
         switch (botao) {
